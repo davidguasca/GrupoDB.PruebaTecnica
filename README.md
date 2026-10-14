@@ -83,13 +83,6 @@ Alineada con la identidad de [grupodigitalbank.com](https://grupodigitalbank.com
 
 <img src="docs/capturas/movil-consulta.png" alt="Consulta en móvil" width="280" />
 
-## Mejoras para producción
-
-- HTTPS y autenticación en el servicio; usuario de base de datos con permiso solo de `EXECUTE` sobre el procedimiento
-- Inyección de dependencias del repositorio para probar el servicio sin base de datos
-- Concurrencia optimista con `rowversion`
-- Logging estructurado y paginación en servidor
-- Migración a .NET 8 con CoreWCF o ASP.NET Core Web API
 
 ## Autor
 
