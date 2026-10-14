@@ -3,7 +3,7 @@ using System.ServiceModel;
 
 namespace GDB.Usuarios.Contratos
 {
-    /// <summary>Operaciones CRUD que expone el servicio de usuarios.</summary>
+    /// <summary>Contrato que comparten cliente y servicio: cada método es una operación SOAP publicada en el WSDL.</summary>
     [ServiceContract(Namespace = "http://grupodigitalbank.com/usuarios")]
     public interface IUsuarioService
     {

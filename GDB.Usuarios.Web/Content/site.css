@@ -1,13 +1,11 @@
-﻿/* =====================================================================
-   ===================================================================== */
-
+﻿/* Variables de diseño: cambiar un valor aquí lo actualiza en toda la interfaz. */
 :root {
     --azul-noche: #001C78;      /* títulos y encabezado */
     --azul-oscuro: #020E33;     /* inicio del degradado del encabezado */
-    --azul: #006FD6;            /* acción principal: azul de marca ajustado a contraste AA */
+    --azul: #006FD6;            /* acción principal; tono con contraste AA sobre texto blanco */
     --azul-hover: #003ED3;
     --cian: #00B6FF;            /* foco y acentos */
-    --naranja: #FF7201;         /* marca */
+    --naranja: #FF7201;         /* acento del logotipo */
     --texto: #393939;
     --texto-suave: #5F6670;
     --borde: #DCE3EC;

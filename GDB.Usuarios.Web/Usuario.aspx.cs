@@ -6,7 +6,7 @@ using Contratos = GDB.Usuarios.Contratos;
 
 namespace GDB.Usuarios.Web
 {
-    /// <summary>Página "usuario": registra un usuario nuevo o modifica el indicado en ?id=.</summary>
+    /// <summary>Formulario de usuario: registra uno nuevo o, si recibe ?id=, carga y actualiza el existente.</summary>
     public partial class Usuario : System.Web.UI.Page
     {
         private const string FormatoFecha = "yyyy-MM-dd";   // formato que envía y espera el calendario HTML5
@@ -20,7 +20,7 @@ namespace GDB.Usuarios.Web
                 ServicioUsuarios.Intentar(() => CargarUsuario(id), lblError);
         }
 
-        /// <summary>Crea el usuario si es nuevo o lo actualiza si ya existe; luego vuelve a la consulta con un aviso.</summary>
+        /// <summary>Crea o actualiza el usuario y redirige al listado, para que recargar la página no repita el envío.</summary>
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!IsValid) return;

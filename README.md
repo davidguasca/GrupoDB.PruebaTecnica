@@ -42,7 +42,7 @@ Pruebas unitarias: **Prueba → Ejecutar todas las pruebas**.
 
 | Decisión | Motivo |
 | --- | --- |
-| `Id` identity como llave primaria | El enunciado no lo pide, pero sin llave no se puede modificar ni eliminar sin ambigüedad |
+| `Id` identity como llave primaria | Llave sustituta: identifica cada fila aunque dos personas compartan nombre y fecha, y permite modificar y eliminar sin ambigüedad |
 | `NVARCHAR(100)` y `CHAR(1)` con `CHECK` | Unicode para tildes y ñ; la base garantiza que el sexo sea M o F |
 | Un procedimiento con `@Accion` (C, R, U, D) | Cumple "un procedimiento CRUD" y es la única puerta de entrada a la tabla |
 | Contrato en un ensamblado propio, consumido con `ChannelFactory` | La web depende de la interfaz y no de la implementación. Un cambio de contrato rompe la compilación en lugar de fallar en ejecución, y no hay proxy generado que mantener |

@@ -11,7 +11,7 @@ namespace GDB.Usuarios.Servicio.Negocio
     {
         private static readonly string[] SexosValidos = { "M", "F" };
 
-        /// <summary>Lanza una FaultException con todos los errores encontrados.</summary>
+        /// <summary>Acumula todos los errores y los devuelve juntos en una FaultException, para corregirlos de una sola vez.</summary>
         public static void Validar(Usuario usuario, bool esNuevo)
         {
             if (usuario == null) throw new FaultException("Los datos del usuario son obligatorios.");

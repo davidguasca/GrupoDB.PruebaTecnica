@@ -6,10 +6,10 @@ using GDB.Usuarios.Web.Servicios;
 
 namespace GDB.Usuarios.Web
 {
-    /// <summary>Página "usuario consulta": grilla de usuarios con las opciones Modificar y Eliminar.</summary>
+    /// <summary>Listado de usuarios: muestra la grilla y atiende las acciones de cada fila.</summary>
     public partial class UsuarioConsulta : System.Web.UI.Page
     {
-        // Avisos que la página "usuario" pide mostrar tras guardar (?aviso=). Nunca se muestra texto tomado de la URL.
+        // Avisos que llegan por ?aviso= tras guardar. Solo se muestran textos de este diccionario, nunca texto de la URL.
         private static readonly Dictionary<string, string> Avisos = new Dictionary<string, string>
         {
             ["creado"] = "Usuario registrado correctamente.",

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace GDB.Usuarios.Contratos
 {
-    /// <summary>Datos de un usuario que viajan entre la web y el servicio.</summary>
+    /// <summary>Datos de un usuario. WCF lo convierte a XML en cada llamada; solo viajan las propiedades con [DataMember].</summary>
     [DataContract(Namespace = "http://grupodigitalbank.com/usuarios")]
     public class Usuario
     {

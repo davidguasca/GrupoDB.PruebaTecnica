@@ -80,7 +80,7 @@ namespace GDB.Usuarios.Servicio.Datos
         private static void AgregarId(SqlCommand cmd, int id) =>
             cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
 
-        /// <summary>Agrega los parámetros con los datos del usuario, tipados como en la tabla.</summary>
+        /// <summary>Agrega los datos como parámetros tipados: viajan separados del SQL, lo que impide la inyección.</summary>
         private static void AgregarDatos(SqlCommand cmd, Usuario usuario)
         {
             cmd.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = usuario.Nombre.Trim();
