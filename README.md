@@ -29,11 +29,12 @@ GDB.Usuarios.Web  ──SOAP (basicHttpBinding)──▶  GDB.Usuarios.Servicio 
 
 ## Cómo ejecutar
 
-1. Ejecutar en orden los scripts de `BaseDatos/` (01 a 04) sobre `(localdb)\MSSQLLocalDB`.
-2. Si se usa otra instancia, ajustar la cadena `BDUsuarios` en `GDB.Usuarios.Servicio/Web.config`.
-3. Abrir `GrupoDigitalBank.PruebaTecnica.sln`.
-4. Solución → Propiedades → **Varios proyectos de inicio**: `GDB.Usuarios.Servicio` y `GDB.Usuarios.Web` en *Iniciar*.
-5. F5. Servicio en `http://localhost:5100/UsuarioService.svc`, web en `http://localhost:5200/`.
+1. Clonar el repositorio: `git clone https://github.com/davidguasca/GrupoDB.PruebaTecnica.git`
+2. Ejecutar en orden los scripts de `BaseDatos/` (01 a 04) sobre `(localdb)\MSSQLLocalDB`.
+3. Si se usa otra instancia, ajustar la cadena `BDUsuarios` en `GDB.Usuarios.Servicio/Web.config`.
+4. Abrir `GrupoDigitalBank.PruebaTecnica.sln`.
+5. Solución → **Configurar proyectos de inicio** → **Varios proyectos de inicio**: `GDB.Usuarios.Servicio` y `GDB.Usuarios.Web` en *Iniciar*.
+6. F5. Servicio en `http://localhost:5100/`, web en `http://localhost:5200/`.
 
 Pruebas unitarias: **Prueba → Ejecutar todas las pruebas**.
 
@@ -89,3 +90,7 @@ Alineada con la identidad de [grupodigitalbank.com](https://grupodigitalbank.com
 - Concurrencia optimista con `rowversion`
 - Logging estructurado y paginación en servidor
 - Migración a .NET 8 con CoreWCF o ASP.NET Core Web API
+
+## Autor
+
+**David Guasca** · [github.com/davidguasca](https://github.com/davidguasca)
