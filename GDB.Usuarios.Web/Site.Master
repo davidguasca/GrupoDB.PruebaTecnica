@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Questrial&display=swap" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <script src="Scripts/sitio.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <a href="UsuarioConsulta.aspx" class="marca">Grupo <span>Digital Bank</span></a>
+            <nav class="menu" aria-label="Navegación principal">
+                <a href="Usuario.aspx">Registrar usuario</a>
+                <a href="UsuarioConsulta.aspx">Consultar usuarios</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <form runat="server">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </form>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">Grupo Digital Bank · Gestión de usuarios · Prueba técnica</div>
+    </footer>
+</body>
+</html>

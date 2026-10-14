@@ -1,0 +1,189 @@
+﻿/* =====================================================================
+   Grupo Digital Bank · Gestión de usuarios
+   Paleta y tipografías tomadas de grupodigitalbank.com
+   ===================================================================== */
+
+:root {
+    --azul-noche: #001C78;      /* títulos y encabezado */
+    --azul-oscuro: #020E33;     /* inicio del degradado del encabezado */
+    --azul: #006FD6;            /* acción principal: azul de marca ajustado a contraste AA */
+    --azul-hover: #003ED3;
+    --cian: #00B6FF;            /* foco y acentos */
+    --naranja: #FF7201;         /* marca */
+    --texto: #393939;
+    --texto-suave: #5F6670;
+    --borde: #DCE3EC;
+    --superficie-suave: #F5F9FD;
+    --exito: #157A3A;
+    --exito-fondo: #E7F6EC;
+    --error: #C2261D;
+    --error-fondo: #FDECEA;
+    --radio: 10px;
+    --sombra: 0 10px 30px rgba(0, 28, 120, .08);
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font: 400 15px/1.6 "Open Sans", system-ui, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(90deg, #E3F6FF 0%, #FCFEFF 40%) fixed;
+}
+
+h1, h2 { margin: 0; font-family: Montserrat, sans-serif; color: var(--azul-noche); line-height: 1.25; }
+h1 { font-size: 1.75rem; font-weight: 700; }
+h2 { font-size: 1.15rem; font-weight: 600; }
+a { color: var(--azul); }
+:focus-visible { outline: 3px solid var(--cian); outline-offset: 2px; }
+
+.contenedor { width: min(1080px, 100% - 32px); margin-inline: auto; }
+.texto-suave { color: var(--texto-suave); font-size: .875rem; }
+
+/* ---------- Encabezado y pie ---------- */
+
+.encabezado { background: linear-gradient(110deg, var(--azul-oscuro) 0%, var(--azul-noche) 60%, #01347A 100%); }
+.encabezado .contenedor { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; min-height: 72px; padding-block: 12px; }
+
+.marca { font: 400 1.35rem/1 Montserrat, sans-serif; color: #fff; text-decoration: none; }
+.marca span { font-weight: 600; color: var(--naranja); }
+
+.menu { display: flex; gap: 4px; }
+.menu a {
+    padding: 10px 12px;
+    font: .8rem Questrial, sans-serif; letter-spacing: .06em; text-transform: uppercase;
+    color: rgba(255, 255, 255, .8); text-decoration: none;
+}
+.menu a:hover { color: #fff; }
+.menu a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 var(--cian); }
+
+main { flex: 1; padding-block: 40px 56px; }
+.pie { padding-block: 20px; font-size: .8rem; color: var(--texto-suave); border-top: 1px solid var(--borde); }
+
+/* ---------- Encabezado de página ---------- */
+
+.cabecera { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.cabecera p { margin: 4px 0 0; }
+.antetitulo { font: .75rem Questrial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--azul); }
+
+/* ---------- Botones ---------- */
+
+.boton {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 0 20px;
+    font: .85rem Questrial, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+    border: 1px solid transparent; border-radius: var(--radio);
+    text-decoration: none; cursor: pointer;
+    transition: background-color .15s, border-color .15s, color .15s;
+}
+.boton svg { width: 18px; height: 18px; }
+.boton-primario { background: var(--azul); color: #fff; }
+.boton-primario:hover { background: var(--azul-hover); }
+.boton-secundario { background: #fff; color: var(--azul-noche); border-color: var(--borde); }
+.boton-secundario:hover { color: var(--azul); border-color: var(--azul); }
+.boton-peligro { background: var(--error); color: #fff; }
+.boton-peligro:hover { background: #A11D16; }
+.enviando .boton-primario { opacity: .7; pointer-events: none; }
+
+/* ---------- Avisos ---------- */
+
+.alerta { display: block; margin-bottom: 20px; padding: 12px 16px; border-left: 4px solid; border-radius: var(--radio); font-size: .9rem; }
+.alerta:empty { display: none; }
+.alerta-exito { color: var(--exito); background: var(--exito-fondo); }
+.alerta-error { color: var(--error); background: var(--error-fondo); }
+
+/* ---------- Tarjetas y tabla ---------- */
+
+.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 14px; box-shadow: var(--sombra); }
+.tabla-contenedor { overflow-x: auto; }
+
+.tabla { width: 100%; border-collapse: collapse; }
+.tabla th {
+    padding: 14px 20px; text-align: left; white-space: nowrap;
+    font: .72rem Questrial, sans-serif; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--texto-suave); background: var(--superficie-suave); border-bottom: 1px solid var(--borde);
+}
+.tabla td { padding: 14px 20px; vertical-align: middle; border-bottom: 1px solid var(--borde); }
+.tabla tr:last-child td { border-bottom: 0; }
+.tabla tr:hover td { background: #F8FBFF; }
+.tabla .col-acciones { text-align: right; white-space: nowrap; }
+
+.persona { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.avatar {
+    flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+    font: 600 .8rem Montserrat, sans-serif; color: var(--azul-noche); background: #E6F2FF;
+}
+.etiqueta { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .8rem; color: #33415C; background: #EEF2F7; }
+
+.accion {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 8px;
+    font: .75rem Questrial, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--azul); text-decoration: none;
+}
+.accion svg { width: 16px; height: 16px; }
+.accion:hover { background: #EAF4FF; }
+.accion-peligro { color: var(--error); }
+.accion-peligro:hover { background: var(--error-fondo); }
+
+.vacio { padding: 48px 24px; text-align: center; }
+.vacio p { margin: 4px 0 20px; color: var(--texto-suave); }
+
+/* ---------- Formulario ---------- */
+
+.volver { display: inline-block; margin-bottom: 16px; font-size: .9rem; text-decoration: none; }
+.formulario { max-width: 560px; padding: 32px; }
+.formulario > p { margin: 4px 0 28px; }
+
+.campo { margin-bottom: 20px; }
+.campo label { display: block; margin-bottom: 6px; font-size: .9rem; font-weight: 600; color: var(--azul-noche); }
+
+.control {
+    width: 100%; min-height: 46px; padding: 10px 14px;
+    font: inherit; color: var(--texto); background-color: #fff;
+    border: 1px solid #C5D0DE; border-radius: var(--radio);
+    transition: border-color .15s, box-shadow .15s;
+}
+.control:hover { border-color: #9FB0C6; }
+.control:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 4px rgba(0, 182, 255, .25); }
+select.control {
+    appearance: none; padding-right: 40px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23001C78' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center / 16px;
+}
+
+.ayuda, .error-campo { display: block; margin-top: 6px; font-size: .8rem; }
+.ayuda { color: var(--texto-suave); }
+.error-campo { color: var(--error); }
+/* Los validadores de ASP.NET cambian su estilo a display:inline cuando hay error. */
+.campo:has(.error-campo[style*="inline"]) .control { border-color: var(--error); }
+.campo:has(.error-campo[style*="inline"]) .ayuda { display: none; }
+
+.acciones { display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--borde); }
+
+/* ---------- Diálogo de confirmación ---------- */
+
+.dialogo { width: min(440px, 100% - 32px); padding: 28px; border: 0; border-radius: 14px; color: var(--texto); box-shadow: 0 24px 60px rgba(2, 14, 51, .3); }
+.dialogo::backdrop { background: rgba(2, 14, 51, .55); }
+.dialogo p { margin: 10px 0 0; }
+.dialogo .acciones { margin-top: 24px; padding-top: 0; border-top: 0; }
+
+/* ---------- Pantallas pequeñas ---------- */
+
+@media (max-width: 640px) {
+    main { padding-block: 24px 40px; }
+    .formulario { padding: 24px 20px; }
+    .acciones { flex-direction: column-reverse; }
+    .acciones .boton { width: 100%; }
+
+    /* La tabla pasa a tarjetas apiladas: cada usuario se lee completo sin desplazamiento lateral. */
+    .tabla, .tabla tbody, .tabla tr, .tabla td { display: block; }
+    .tabla tr:has(th) { display: none; }
+    .tabla tr { padding: 16px 20px; border-bottom: 1px solid var(--borde); }
+    .tabla tr:last-child { border-bottom: 0; }
+    .tabla td { padding: 4px 0; border: 0; }
+    .tabla .col-acciones { margin-left: -10px; padding-top: 8px; text-align: left; }
+}
